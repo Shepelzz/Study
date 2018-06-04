@@ -17,6 +17,5 @@ public class Homework_5_3 {
             }
         }
         return array.length - countRepeat;
-
     }
 }

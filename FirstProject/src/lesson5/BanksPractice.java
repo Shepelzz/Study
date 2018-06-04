@@ -10,7 +10,7 @@ public class BanksPractice {
         System.out.println(Arrays.toString(findClientsByBalance(names, balances, -100)));
         System.out.println(Arrays.toString(findClientsWithNegativeBalance(names, balances)));
 
-        depositMoney(names, balances, "Ann", 1000);
+        depositMoney(names, balances, "Ann", 2000);
         System.out.println(Arrays.toString(balances));
     }
 
