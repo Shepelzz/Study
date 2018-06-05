@@ -21,11 +21,26 @@ public class UserRepository {
     }
 
     public long[] getUserIds(){
-        long[] idsList = new long[users.length];
-        for (int i = 0; i < idsList.length; i++) {
-            if(users[i] != null)
-                idsList[i] = users[i].getId();
-            else idsList[i] = -1;
+        int idxCount = 0;
+        for(User user : users){
+            if(user != null)
+                idxCount++;  //узнаю кол-во эл-тов не null
+        }
+
+        long[] idsList = new long[idxCount];
+        for(int i = 0; i<idsList.length; i++){
+            idsList[i] = -1;    //так как примитивный массив инициализируется с нулями внутри
+                                //заполняю его значениями -1
+                                //потому что если будут нули и у юзера вдруг id == 0, то не получится ничего(
+        }
+
+        for(User user : users){
+            for(int i = 0; i < idsList.length; i++){
+                if(idsList[i] == -1 && user != null){
+                    idsList[i] = user.getId();
+                    break;
+                }
+            }
         }
         return idsList;
     }
