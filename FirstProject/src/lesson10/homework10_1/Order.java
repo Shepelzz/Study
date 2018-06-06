@@ -23,9 +23,9 @@ public abstract class Order {
     }
 
 
-    abstract void validateOrder();
+    public abstract void validateOrder();
 
-    abstract void calculatePrice();
+    public abstract void calculatePrice();
 
     void confirmShipping(){
         if(getDateShipped() == null)

@@ -5,12 +5,13 @@ import java.util.Date;
 public class FurnitureOrder extends Order{
     private String furnitureCode;
 
-    public FurnitureOrder(String itemName, Date dateCreated, String shipFromCity, String shipToCity, int basePrice, Customer customerOwned) {
+    public FurnitureOrder(String itemName, Date dateCreated, String shipFromCity, String shipToCity, int basePrice, Customer customerOwned, String furnitureCode) {
         super(itemName, dateCreated, shipFromCity, shipToCity, basePrice, customerOwned);
+        this.furnitureCode = furnitureCode;
     }
 
     @Override
-    void validateOrder() {
+    public void validateOrder() {
         String[] citiesFrom = {"Киев","Львов"};
 
         if(super.checkCities(citiesFrom, null) && super.getBasePrice() >= 500 && super.getCustomerOwned().getName() != "Test"){
@@ -19,7 +20,7 @@ public class FurnitureOrder extends Order{
     }
 
     @Override
-    void calculatePrice() {
+    public void calculatePrice() {
         int price = super.getBasePrice();
         double shipmentPrice = price * 0.2;
         if(price < 5000)

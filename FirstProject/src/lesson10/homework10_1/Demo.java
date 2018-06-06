@@ -9,19 +9,19 @@ public class Demo {
         Customer customer3 = new Customer("Test", "Полтава", "Мужской");
         Customer customer4 = new Customer("Анна", "Киев", "Женский");
 
-        ElectronicsOrder eOrder1 = new ElectronicsOrder("Пылесос", new Date(), "Киев", "Одесса", 4500, customer1);
+        ElectronicsOrder eOrder1 = new ElectronicsOrder("Пылесос", new Date(), "Киев", "Одесса", 4500, customer1, 12);
         eOrder1.validateOrder();
         eOrder1.calculatePrice();
 
-        ElectronicsOrder eOrder2 = new ElectronicsOrder("Флешка", new Date(), "Одесса", "Буча", 300, customer2);
+        ElectronicsOrder eOrder2 = new ElectronicsOrder("Флешка", new Date(), "Одесса", "Буча", 300, customer2, 3);
         eOrder2.validateOrder();
         eOrder2.calculatePrice();
 
-        ElectronicsOrder fOrder1 = new ElectronicsOrder("Шторы", new Date(), "Полтава", "Киев", 1000, customer3);
+        FurnitureOrder fOrder1 = new FurnitureOrder("Шторы", new Date(), "Полтава", "Киев", 1000, customer3, "Str99734");
         fOrder1.validateOrder();
         fOrder1.calculatePrice();
 
-        ElectronicsOrder fOrder2 = new ElectronicsOrder("Ковер", new Date(), "Харьков", "Одесса", 2100, customer4);
+        FurnitureOrder fOrder2 = new FurnitureOrder("Ковер", new Date(), "Харьков", "Одесса", 2100, customer4, "453rfdtg");
         fOrder2.validateOrder();
         fOrder2.calculatePrice();
     }

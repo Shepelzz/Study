@@ -5,12 +5,13 @@ import java.util.Date;
 public class ElectronicsOrder extends Order {
     private int guaranteeMonths;
 
-    public ElectronicsOrder(String itemName, Date dateCreated, String shipFromCity, String shipToCity, int basePrice, Customer customerOwned) {
+    public ElectronicsOrder(String itemName, Date dateCreated, String shipFromCity, String shipToCity, int basePrice, Customer customerOwned, int guaranteeMonths) {
         super(itemName, dateCreated, shipFromCity, shipToCity, basePrice, customerOwned);
+        this.guaranteeMonths = guaranteeMonths;
     }
 
     @Override
-    void validateOrder() {
+    public void validateOrder() {
         String[] citiesFrom = {"Киев","Одесса","Днепр","Харьков"};
         String[] citiesTo = {"Киев","Одесса","Днепр","Харьков"};
 
@@ -20,7 +21,7 @@ public class ElectronicsOrder extends Order {
     }
 
     @Override
-    void calculatePrice() {
+    public void calculatePrice() {
         int price = super.getBasePrice();
         double shipmentPrice = price * 0.1;
         if(super.getShipToCity() != "Киев" && super.getShipToCity() != "Одесса")
