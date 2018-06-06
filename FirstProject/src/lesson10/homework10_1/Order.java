@@ -32,19 +32,9 @@ public abstract class Order {
             setDateShipped(new Date());
     }
 
-    protected boolean checkCityFrom(String[] citiesFrom){
-                for(String cityFrom : citiesFrom){
-            if(cityFrom == getShipFromCity()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    protected boolean checkCityTo(String[] citiesTo){
-
-        for(String cityTo : citiesTo){
-            if(cityTo == getShipToCity()) {
+    protected boolean checkCity(String[] cities, String city){
+                for(String c : cities){
+            if(c == city) {
                 return true;
             }
         }
