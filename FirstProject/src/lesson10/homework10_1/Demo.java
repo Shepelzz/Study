@@ -24,5 +24,13 @@ public class Demo {
         FurnitureOrder fOrder2 = new FurnitureOrder("Ковер", new Date(), "Харьков", "Одесса", 2100, customer4, "453rfdtg");
         fOrder2.validateOrder();
         fOrder2.calculatePrice();
+
+
+        /*Customer customer7 = new Customer("Альона", "Одесса", "Женский");
+        ElectronicsOrder eOrder7 = new ElectronicsOrder("Пылесос", new Date(), "Киев", "Бровары", 1001, customer7, 12);
+        eOrder1.validateOrder();
+        eOrder1.calculatePrice();
+        System.out.println(eOrder1.getDateConfirmed());
+        System.out.println(eOrder1.getTotalPrice());*/
     }
 }

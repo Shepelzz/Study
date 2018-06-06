@@ -27,12 +27,12 @@ public abstract class Order {
 
     public abstract void calculatePrice();
 
-    void confirmShipping(){
+    public void confirmShipping(){
         if(getDateShipped() == null)
             dateShipped = new Date();
     }
 
-    boolean checkCities(String[] citiesFrom, String[] citiesTo){
+    protected boolean checkCities(String[] citiesFrom, String[] citiesTo){
         boolean checkCityFrom = false;
         boolean checkCityTo = false;
 
