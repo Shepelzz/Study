@@ -14,7 +14,7 @@ public class FurnitureOrder extends Order{
     public void validateOrder() {
         String[] cities = {"Киев","Львов"};
 
-        if(checkCity(cities, getShipFromCity()) && getBasePrice() >= 500 && getCustomerOwned().getName() != "Test"){
+        if(checkCity(cities, getShipFromCity()) && getBasePrice() >= 500 && getCustomerOwned().getName() != "Тест"){
             setDateConfirmed(new Date());
         }
     }
