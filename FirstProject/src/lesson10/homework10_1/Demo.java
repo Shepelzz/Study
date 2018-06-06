@@ -12,18 +12,22 @@ public class Demo {
         ElectronicsOrder eOrder1 = new ElectronicsOrder("Пылесос", new Date(), "Киев", "Одесса", 4500, customer1, 12);
         eOrder1.validateOrder();
         eOrder1.calculatePrice();
+        eOrder1.confirmShipping();
 
         ElectronicsOrder eOrder2 = new ElectronicsOrder("Флешка", new Date(), "Одесса", "Буча", 300, customer2, 3);
         eOrder2.validateOrder();
         eOrder2.calculatePrice();
+        eOrder2.confirmShipping();
 
         FurnitureOrder fOrder1 = new FurnitureOrder("Шторы", new Date(), "Полтава", "Киев", 1000, customer3, "Str99734");
         fOrder1.validateOrder();
         fOrder1.calculatePrice();
+        fOrder1.confirmShipping();
 
         FurnitureOrder fOrder2 = new FurnitureOrder("Ковер", new Date(), "Харьков", "Одесса", 2100, customer4, "453rfdtg");
         fOrder2.validateOrder();
         fOrder2.calculatePrice();
+        fOrder2.confirmShipping();
 
 
         /*Customer customer7 = new Customer("Альона", "Одесса", "Женский");
