@@ -14,7 +14,7 @@ public class ElectronicsOrder extends Order {
     public void validateOrder() {
         String[] cities = {"Киев","Одесса","Днепр","Харьков"};
 
-        if(checkCity(cities, getShipFromCity()) && checkCity(cities, getShipFromCity()) && getBasePrice() >= 100 && getCustomerOwned().getGender() == "Женский"){
+        if(checkCity(cities, getShipFromCity()) && checkCity(cities, getShipToCity()) && getBasePrice() >= 100 && getCustomerOwned().getGender() == "Женский"){
                 setDateConfirmed(new Date());
         }
     }
