@@ -15,20 +15,20 @@ public class ElectronicsOrder extends Order {
         String[] citiesFrom = {"Киев","Одесса","Днепр","Харьков"};
         String[] citiesTo = {"Киев","Одесса","Днепр","Харьков"};
 
-        if(super.checkCities(citiesFrom, citiesTo) && super.getBasePrice() >= 100 && super.getCustomerOwned().getGender() == "Женский"){
-                super.setDateConfirmed(new Date());
+        if(checkCityFrom(citiesFrom) && checkCityTo(citiesTo) && getBasePrice() >= 100 && getCustomerOwned().getGender() == "Женский"){
+                setDateConfirmed(new Date());
         }
     }
 
     @Override
     public void calculatePrice() {
-        int price = super.getBasePrice();
+        int price = getBasePrice();
         double shipmentPrice = price * 0.1;
-        if(super.getShipToCity() != "Киев" && super.getShipToCity() != "Одесса")
+        if(getShipToCity() != "Киев" && getShipToCity() != "Одесса")
             shipmentPrice = price * 0.15;
         double totalPrice = price+shipmentPrice;
         if(price > 1000)
             totalPrice = totalPrice - totalPrice * 0.05;
-        super.setTotalPrice(totalPrice);
+        setTotalPrice(totalPrice);
     }
 }

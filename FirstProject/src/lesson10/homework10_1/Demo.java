@@ -27,10 +27,10 @@ public class Demo {
 
 
         /*Customer customer7 = new Customer("Альона", "Одесса", "Женский");
-        ElectronicsOrder eOrder7 = new ElectronicsOrder("Пылесос", new Date(), "Киев", "Бровары", 1001, customer7, 12);
-        eOrder1.validateOrder();
-        eOrder1.calculatePrice();
-        System.out.println(eOrder1.getDateConfirmed());
-        System.out.println(eOrder1.getTotalPrice());*/
+        FurnitureOrder eOrder7 = new FurnitureOrder("Пылесос", new Date(), "xcvfxc", "Бровары", 1001, customer7, "fdgd");
+        eOrder7.validateOrder();
+        eOrder7.calculatePrice();
+        System.out.println(eOrder7.getDateConfirmed());
+        System.out.println(eOrder7.getTotalPrice());*/
     }
 }

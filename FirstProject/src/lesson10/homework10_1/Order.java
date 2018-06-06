@@ -32,24 +32,23 @@ public abstract class Order {
             dateShipped = new Date();
     }
 
-    protected boolean checkCities(String[] citiesFrom, String[] citiesTo){
-        boolean checkCityFrom = false;
-        boolean checkCityTo = false;
-
-        for(String cityFrom : citiesFrom){
-            if(cityFrom == null || cityFrom == getShipFromCity()) {
-                checkCityFrom = true;
-                break;
+    protected boolean checkCityFrom(String[] citiesFrom){
+                for(String cityFrom : citiesFrom){
+            if(cityFrom == getShipFromCity()) {
+                return true;
             }
         }
+        return false;
+    }
+
+    protected boolean checkCityTo(String[] citiesTo){
 
         for(String cityTo : citiesTo){
-            if(cityTo == null || cityTo == getShipToCity()) {
-                checkCityTo = true;
-                break;
+            if(cityTo == getShipToCity()) {
+                return true;
             }
         }
-        return checkCityFrom && checkCityTo;
+        return false;
     }
 
     public String getItemName() {
