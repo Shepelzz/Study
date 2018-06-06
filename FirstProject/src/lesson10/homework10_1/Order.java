@@ -29,7 +29,7 @@ public abstract class Order {
 
     public void confirmShipping(){
         if(getDateShipped() == null)
-            dateShipped = new Date();
+            setDateShipped(new Date());
     }
 
     protected boolean checkCityFrom(String[] citiesFrom){
