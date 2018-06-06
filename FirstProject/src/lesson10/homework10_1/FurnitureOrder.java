@@ -12,9 +12,9 @@ public class FurnitureOrder extends Order{
 
     @Override
     public void validateOrder() {
-        String[] citiesFrom = {"Киев","Львов"};
+        String[] cities = {"Киев","Львов"};
 
-        if(checkCityFrom(citiesFrom) && getBasePrice() >= 500 && getCustomerOwned().getName() != "Test"){
+        if(checkCity(cities, getShipFromCity()) && getBasePrice() >= 500 && getCustomerOwned().getName() != "Test"){
             setDateConfirmed(new Date());
         }
     }
