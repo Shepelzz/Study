@@ -1,8 +1,8 @@
-package lesson10.abstractexample;
+package lesson10.abstractfirstexample;
 
-public class OracleDbProvider extends DbProvider{
+public class PostgreSQLDbProvider extends DbProvider {
 
-    public OracleDbProvider(String dbHost) {
+    public PostgreSQLDbProvider(String dbHost) {
         super(dbHost);
     }
 

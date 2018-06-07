@@ -1,4 +1,4 @@
-package lesson10.abstractexample;
+package lesson10.abstractfirstexample;
 
 public class MySQLProvider extends DbProvider{
 
