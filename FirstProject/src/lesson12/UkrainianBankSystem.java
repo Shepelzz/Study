@@ -28,6 +28,11 @@ public class UkrainianBankSystem implements BankSystem {
             return;
         if(!checkFundLimits(toUser, amount))
             return;
+        if(fromUser.getBank().getCurrency() != toUser.getBank().getCurrency()){
+            System.err.println("Cant send money "+ amount + " from user: different currency");
+            return;
+        }
+
 
         withdraw(fromUser, amount);
         fund(toUser, amount);

@@ -17,22 +17,22 @@ public class Main {
 
         BankSystem bankSystem = new UkrainianBankSystem();
 
-        System.out.println(user1.toString());
-        System.out.println(user2.toString());
+        /*System.out.println(user1.toString());
+        System.out.println(user3.toString());
 
-        bankSystem.transferMoney(user1, user2, 0);
+        bankSystem.transferMoney(user1, user3, 100);
         System.out.println();
 
         System.out.println(user1.toString());
-        System.out.println(user2.toString());
+        System.out.println(user3.toString());*/
 
-        /*for(User user : users){
+        for(User user : users){
             bankSystem.withdraw(user, 150);
             bankSystem.fund(user, 59);
             bankSystem.transferMoney(user, user2, 43);
             bankSystem.paySalary(user);
 
             System.out.println(user.getBalance());
-        }*/
+        }
     }
 }
