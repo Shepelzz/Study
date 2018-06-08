@@ -20,7 +20,7 @@ public class TripAdvisorAPI implements API {
         int index = 0;
         for(Room room : rooms) {
             if (checkingTripAdvisorRoomSearchCondition(room, price, persons, city, hotel)) {
-                roomsFound[0] = room;
+                roomsFound[index] = room;
                 index++;
             }
         }

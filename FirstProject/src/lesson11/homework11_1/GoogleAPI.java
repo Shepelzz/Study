@@ -20,7 +20,7 @@ public class GoogleAPI implements API {
         int index = 0;
         for(Room room : rooms) {
             if (checkingGoogleRoomSearchCondition(room, price, persons, city, hotel)) {
-                roomsFound[0] = room;
+                roomsFound[index] = room;
                 index++;
             }
         }

@@ -20,35 +20,35 @@ public class Controller {
                 validRoomsIndex++;
             }
         }
-
-        int countDistinctRooms = 0;
-        for(int i = 0; i < validRooms.length; i++){
-            if(isRoomDublicated(validRooms, i)){
-                countDistinctRooms++;
-            }
-        }
-        System.out.println(countDistinctRooms);
-
-        Room[] validRoomsDistinct = new Room[countDistinctRooms];
-        int validRoomsDistinctIndex = 0;
-        for(int i = 0; i < validRooms.length; i++){
-            if(isRoomDublicated(validRooms, i)){
-                validRoomsDistinct[validRoomsDistinctIndex] = validRooms[i];
-            }
-        }
-
-        return validRoomsDistinct;
+        return validRooms;
     }
 
     public Room[] check(API api1, API api2){
+        int countRooms = 0;
+        for(Room roomAPI1 : api1.getAll()){
+            for(Room roomAPI2 : api2.getAll()){
+                if(     roomAPI1.getPrice() == roomAPI2.getPrice()
+                        && roomAPI1.getHotelName() == roomAPI2.getHotelName()
+                        && roomAPI1.getCityName() == roomAPI2.getCityName()
+                        && roomAPI1.getPersons() == roomAPI2.getPersons()){
+                    countRooms++;
+                }
+            }
+        }
+        Room[] similarRooms = new Room[countRooms];
+        int similarRoomsIndex = 0;
+        for(Room roomAPI1 : api1.getAll()){
+            for(Room roomAPI2 : api2.getAll()){
+                if(     roomAPI1.getPrice() == roomAPI2.getPrice()
+                        && roomAPI1.getHotelName() == roomAPI2.getHotelName()
+                        && roomAPI1.getCityName() == roomAPI2.getCityName()
+                        && roomAPI1.getPersons() == roomAPI2.getPersons()){
+                    similarRooms[similarRoomsIndex] = roomAPI1;
+                    similarRoomsIndex++;
+                }
+            }
+        }
 
-        return new Room[0];
-    }
-
-    private boolean isRoomDublicated(Room[] rooms, int i){
-        for(int j = 0; j < i; j++)
-            if(rooms[i] == rooms[j])
-                return true;
-        return false;
+        return similarRooms;
     }
 }
