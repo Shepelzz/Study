@@ -4,8 +4,8 @@ public class UkrainianBankSystem implements BankSystem {
 
     @Override
     public void withdraw(User user, int amount) {
-        //проверить можно ли снять - проверить лимит, достаточно ли денег
-
+        //проверить лимит
+        //проверить достаточно ли денег
         if(!checkWithdraw(user, amount))
             return;
         user.setBalance(user.getBalance() - amount - amount * user.getBank().getComission(amount));
@@ -13,30 +13,37 @@ public class UkrainianBankSystem implements BankSystem {
 
     @Override
     public void fund(User user, int amount) {
-        //TODO homework
+        //проверить amount >= 0
+        //проверить лимит
+        if(!checkFundLimits(user, amount))
+            return;
+        user.setBalance(user.getBalance() + amount);
     }
 
     @Override
     public void transferMoney(User fromUser, User toUser, int amount) {
         //снимаем деньги
-        //пополняем с frmoUser - ToUser
-
+        //пополняем с fromUser - ToUser
         if(!checkWithdraw(fromUser, amount))
             return;
-        //TODO checkFundRules
+        if(!checkFundLimits(toUser, amount))
+            return;
 
         fromUser.setBalance(fromUser.getBalance() - amount - amount * fromUser.getBank().getComission(amount));
-        //TODO fund
-
+        toUser.setBalance(toUser.getBalance() + amount);
     }
 
     @Override
     public void paySalary(User user) {
-        //TODO homework
+        //зачислить к зп
+        fund(user, user.getSalary());
     }
 
-    private void withdrawalErrorMsg(int amount, User user){
+    private void withdrawalErrorMsg(User user, int amount){
         System.err.println("Cant withdraw money "+ amount + " from user" + user.toString());
+    }
+    private void fundingErrorMsg(User user, int amount){
+        System.err.println("Cant fund money "+ amount + " to user" + user.toString());
     }
 
     private boolean checkWithdraw(User user, int amount){
@@ -46,7 +53,15 @@ public class UkrainianBankSystem implements BankSystem {
 
     private boolean checkWithdrawLimits(User user, int amount, double limit){
         if(amount + user.getBank().getComission(amount) > limit) {
-            withdrawalErrorMsg(amount, user);
+            withdrawalErrorMsg(user, amount);
+            return false;
+        }
+        return true;
+    }
+
+    private boolean checkFundLimits(User user, int amount){
+        if(amount <= 0 || amount > user.getBank().getLimitOfFunding()){
+            fundingErrorMsg(user, amount);
             return false;
         }
         return true;
