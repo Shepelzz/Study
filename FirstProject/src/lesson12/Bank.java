@@ -78,11 +78,9 @@ public abstract class Bank {
         this.rating = rating;
     }
 
-    public long getTotalCapitel() {
-        return totalCapital;
-    }
+    public long getTotalCapital() { return totalCapital; }
 
-    public void setTotalCapitel(long totalCapitel) {
+    public void setTotalCapital(long totalCapitel) {
         this.totalCapital = totalCapitel;
     }
 }
