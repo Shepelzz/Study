@@ -7,7 +7,7 @@ public abstract class Bank {
     private int numberOfEmployees;
     private double avrSalaryOfEmployee;
     private long rating;
-    private long totalCapitel;
+    private long totalCapital;
 
     public Bank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapitel) {
         this.id = id;
@@ -16,7 +16,7 @@ public abstract class Bank {
         this.numberOfEmployees = numberOfEmployees;
         this.avrSalaryOfEmployee = avrSalaryOfEmployee;
         this.rating = rating;
-        this.totalCapitel = totalCapitel;
+        this.totalCapital = totalCapitel;
     }
 
 
@@ -79,10 +79,10 @@ public abstract class Bank {
     }
 
     public long getTotalCapitel() {
-        return totalCapitel;
+        return totalCapital;
     }
 
     public void setTotalCapitel(long totalCapitel) {
-        this.totalCapitel = totalCapitel;
+        this.totalCapital = totalCapitel;
     }
 }

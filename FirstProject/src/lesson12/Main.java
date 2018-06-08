@@ -8,14 +8,22 @@ public class Main {
 
         User user1 = new User(1001, "Denis", 12200, 40, "GMD", 1750, usBank);
         User user2 = new User(1002, "Anton", 500, 3, "GMD", 600, usBank);
-        User user3 = new User(1003, "Liza", 50877, 84, "GMD", 3220, usBank);
-        User user4 = new User(1004, "Matt", 120, 1, "GMD", 1100, usBank);
-        User user5 = new User(1005, "Chu", 5, 2, "GMD", 300, usBank);
-        User user6 = new User(1006, "Ju", 8055, 26, "GMD", 1600, usBank);
+        User user3 = new User(1003, "Liza", 50877, 84, "GMD", 3220, euBank);
+        User user4 = new User(1004, "Matt", 120, 1, "GMD", 1100, euBank);
+        User user5 = new User(1005, "Chu", 5, 2, "GMD", 300, chinaBank);
+        User user6 = new User(1006, "Ju", 8055, 26, "GMD", 1600, chinaBank);
 
         User[] users = {user1, user2, user3, user4, user5, user6};
 
         BankSystem bankSystem = new UkrainianBankSystem();
+
+        /*System.out.println(user1.toString());
+        System.out.println(user5.toString());
+
+        bankSystem.transferMoney(user1, user5, 300);
+
+        System.out.println(user1.toString());
+        System.out.println(user5.toString());*/
 
         for(User user : users){
             bankSystem.withdraw(user, 150);
